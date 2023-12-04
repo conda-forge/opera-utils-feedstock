@@ -11,7 +11,7 @@ source:
 
 build:
   entry_points:
-    - opera_utils = opera_utils.cli:main
+    - opera-utils = opera_utils.cli:cli_app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -24,9 +24,11 @@ requirements:
     - pip
   run:
     - python >=3.8
+    - click >=7.0
     - h5py >=1.10
     - numpy >=1.20
     - pooch >=1.7
+    - pyproj >=3.3
     - shapely >=1.8
 
 test:
@@ -34,6 +36,7 @@ test:
     - opera_utils
   commands:
     - pip check
+    - opera-utils --help
   requires:
     - pip
 
