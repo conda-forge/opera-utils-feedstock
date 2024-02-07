@@ -1,5 +1,5 @@
 {% set name = "opera-utils" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opera-utils-{{ version }}.tar.gz
-  sha256: 3a033c20c0bdfb14afb100e91ea6497455b0b2f79e25041088ed22a6fa534050
+  sha256: f73e040ae8289ec738ede65449b6ed0388f1304db585920d9f492622022ff5ec
 
 build:
   entry_points:
@@ -29,7 +29,6 @@ requirements:
     - numpy >=1.20
     - pooch >=1.7
     - pyproj >=3.3
-    - scipy >=1.5
     - shapely >=1.8
 
 test:
