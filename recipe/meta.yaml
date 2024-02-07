@@ -29,7 +29,6 @@ requirements:
     - numpy >=1.20
     - pooch >=1.7
     - pyproj >=3.3
-    - scipy >=1.5
     - shapely >=1.8
 
 test:
