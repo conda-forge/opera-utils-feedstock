@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: e7cff823c2a3811e2e7f1a28330806bc401c081c92e3b0ca6836fe8239c55b4f
 
 build:
@@ -14,16 +14,16 @@ build:
     - opera-utils = opera_utils.cli:cli_app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=64.0
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - click >=7.0
     - h5py >=1.10
     - numpy >=1.20
@@ -39,6 +39,7 @@ test:
     - opera-utils --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/opera-adt/opera-utils
