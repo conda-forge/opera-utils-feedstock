@@ -1,5 +1,5 @@
 {% set name = "opera-utils" %}
-{% set version = "0.14.0" %}
+{% set version = "0.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: e7cff823c2a3811e2e7f1a28330806bc401c081c92e3b0ca6836fe8239c55b4f
+  sha256: cbc2bde728f1bb450495aa9befe4c03909f5e4056173b918131810d20a944e84
 
 build:
   entry_points:
     - opera-utils = opera_utils.cli:cli_app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
