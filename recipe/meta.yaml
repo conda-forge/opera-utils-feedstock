@@ -1,5 +1,5 @@
 {% set name = "opera-utils" %}
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 9d104ea63f60ab44de86fd5ab3a00d4c990bdd8ca2bf6a65b9967ba15b4e10f7
+  sha256: 4322e95f3157a76671ba736ed611f9d2a140b6c863e41cebb3b82622222817f1
 
 build:
   entry_points:
