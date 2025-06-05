@@ -51,6 +51,10 @@ requirements:
 test:
   imports:
     - opera_utils
+    - opera_utils.disp._download
+    - opera_utils.disp._reformat
+    - opera_utils.disp._search
+
   commands:
     - pip check
     - opera-utils --help
