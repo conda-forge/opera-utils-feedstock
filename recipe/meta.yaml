@@ -14,7 +14,7 @@ build:
   entry_points:
     - opera-utils = opera_utils.cli:cli_app
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install .[disp] -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -43,6 +43,7 @@ requirements:
     - h5netcdf
     - s3fs
     - tqdm
+    - pandas
     - xarray
     - dask
     - zarr
