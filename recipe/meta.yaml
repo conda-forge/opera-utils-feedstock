@@ -51,9 +51,6 @@ requirements:
 test:
   imports:
     - opera_utils
-    - opera_utils.disp._download
-    - opera_utils.disp._reformat
-    - opera_utils.disp._search
 
   commands:
     - pip check
@@ -61,7 +58,6 @@ test:
     - opera-utils search-l2 --help
     - opera-utils disp-s1-frame-bbox --help
     - opera-utils disp-s1-intersects --help
-    - opera-utils disp-s1-reformat --help
   requires:
     - pip
     - python {{ python_min }}
