@@ -1,5 +1,5 @@
 {% set name = "opera-utils" %}
-{% set version = "0.21.0" %}
+{% set version = "0.22.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,18 +8,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: f4eef7f99fd71321e37e484c76fb41960613db0bf4cc4017a13b410e5c198b5d
+  sha256: 9654ff04a93925366733a5fcbb00df99edc6d44519b4141eabf72bb21e0eef05
 
 build:
   entry_points:
     - opera-utils = opera_utils.cli:cli_app
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install .[disp] -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >={{ python_min }}
+    - python {{ python_min }}
     - setuptools >=64.0
     - setuptools-scm >=6.2
     - pip
@@ -43,13 +43,19 @@ requirements:
     - h5netcdf
     - s3fs
     - tqdm
+    - pandas
+    - xarray
+    - dask
+    - zarr
 
 test:
   imports:
     - opera_utils
+
   commands:
     - pip check
     - opera-utils --help
+    - opera-utils search-l2 --help
     - opera-utils disp-s1-frame-bbox --help
     - opera-utils disp-s1-intersects --help
   requires:
