@@ -46,7 +46,7 @@ requirements:
     - pandas
     - xarray
     - dask
-    - zarr
+    - zarr >=3
 
 test:
   imports:
