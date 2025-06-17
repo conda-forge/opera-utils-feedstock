@@ -1,6 +1,6 @@
 {% set name = "opera-utils" %}
 {% set version = "0.23.0" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -44,9 +44,9 @@ requirements:
     - s3fs
     - tqdm
     - pandas
-    - xarray
+    - xarray >=2025.01
     - dask
-    - zarr
+    - zarr >=3
 
 test:
   imports:
